@@ -1,12 +1,15 @@
+import com.aluracursos.screenmatch.modelos.Pelicula;
+
 public class Principal {
 
     public static void main(String[] args) {
 
         // Crear una instancia de pelicula
         Pelicula miPelicula = new Pelicula();
-        miPelicula.nombre = "Encanto";
-        miPelicula.fechaLanzamiento = 2021;
-        miPelicula.duracionMinutos = 120;
+        miPelicula.setNombre("Encanto");
+        miPelicula.setFechaLanzamiento(2021);
+        miPelicula.setDuracionMinutos(120);
+        miPelicula.setIncluidoPlan(true);
 
         miPelicula.muestraFichaTecnica();
 
