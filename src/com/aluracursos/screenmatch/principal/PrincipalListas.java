@@ -25,9 +25,11 @@ public class PrincipalListas {
         lista.add(casaDragon);
 
         for (Titulo item: lista) {
-            System.out.println(item);
-            Pelicula pelicula = (Pelicula) item;
-            System.out.println(pelicula.getClasificacion());
+            System.out.println(item.getNombre());
+            // Si la instancia es del tipo Película crea una variable pelicula de ese tipo
+            if (item instanceof Pelicula pelicula && pelicula.getClasificacion() > 2) {
+                System.out.println(pelicula.getClasificacion());
+            }
         }
     }
 }
