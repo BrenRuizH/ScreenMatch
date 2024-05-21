@@ -4,6 +4,8 @@ import com.aluracursos.screenmatch.modelos.Episodio;
 import com.aluracursos.screenmatch.modelos.Pelicula;
 import com.aluracursos.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
 
     public static void main(String[] args) {
@@ -58,5 +60,22 @@ public class Principal {
         episodio.setTotalVisualizaciones(50);
 
         filtro.filtra(episodio);
+
+        // ****************************************************************
+        var peliculaBruno = new Pelicula();
+        peliculaBruno.setNombre("El Señor de los Anillos");
+        peliculaBruno.setDuracionMinutos(180);
+        peliculaBruno.setFechaLanzamiento(2001);
+
+        // Todos los objetos que coloquemos dentro del ArrayList serán de tipo Pelicula
+        ArrayList<Pelicula> listaPeliculas = new ArrayList<>();
+        listaPeliculas.add(peliculaBruno);
+        listaPeliculas.add(miPelicula);
+        listaPeliculas.add(otraPelicula);
+
+        System.out.println("Tamaño de la lista: " + listaPeliculas.size());
+        System.out.println("La primer película es: "+ listaPeliculas.get(0).getNombre());
+
+        System.out.println("Lista de Películas: " + listaPeliculas);
     }
 }
