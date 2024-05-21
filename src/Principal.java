@@ -11,8 +11,7 @@ public class Principal {
     public static void main(String[] args) {
 
         // Crear una instancia de pelicula
-        Pelicula miPelicula = new Pelicula();
-        miPelicula.setNombre("Encanto");
+        Pelicula miPelicula = new Pelicula("Encanto");
         miPelicula.setFechaLanzamiento(2021);
         miPelicula.setDuracionMinutos(120);
         miPelicula.setIncluidoPlan(true);
@@ -26,6 +25,7 @@ public class Principal {
         System.out.println(miPelicula.getTotalEvaluaciones());
         System.out.println(miPelicula.calculaMedia());
 
+        // Esto es un constructor
         Serie casaDragon = new Serie();
         casaDragon.setNombre("La Casa del Dragón");
         casaDragon.setFechaLanzamiento(2022);
@@ -37,8 +37,7 @@ public class Principal {
         casaDragon.muestraFichaTecnica();
         System.out.println(casaDragon.getDuracionMinutos());
 
-        Pelicula otraPelicula = new Pelicula();
-        otraPelicula.setNombre("Matrix");
+        Pelicula otraPelicula = new Pelicula("Matrix");
         otraPelicula.setFechaLanzamiento(1998);
         otraPelicula.setDuracionMinutos(180);
 
@@ -62,8 +61,7 @@ public class Principal {
         filtro.filtra(episodio);
 
         // ****************************************************************
-        var peliculaBruno = new Pelicula();
-        peliculaBruno.setNombre("El Señor de los Anillos");
+        var peliculaBruno = new Pelicula("El Señor de los Anillos");
         peliculaBruno.setDuracionMinutos(180);
         peliculaBruno.setFechaLanzamiento(2001);
 
