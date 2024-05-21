@@ -11,8 +11,7 @@ public class Principal {
     public static void main(String[] args) {
 
         // Crear una instancia de pelicula
-        Pelicula miPelicula = new Pelicula("Encanto");
-        miPelicula.setFechaLanzamiento(2021);
+        Pelicula miPelicula = new Pelicula("Encanto", 2021);
         miPelicula.setDuracionMinutos(120);
         miPelicula.setIncluidoPlan(true);
 
@@ -26,9 +25,7 @@ public class Principal {
         System.out.println(miPelicula.calculaMedia());
 
         // Esto es un constructor
-        Serie casaDragon = new Serie();
-        casaDragon.setNombre("La Casa del Dragón");
-        casaDragon.setFechaLanzamiento(2022);
+        Serie casaDragon = new Serie("La Casa del Dragón", 2022);
         casaDragon.setTemporada(1);
         casaDragon.setMinutosEpisodio(50);
         casaDragon.setEpisodiosTemporada(10);
@@ -37,8 +34,7 @@ public class Principal {
         casaDragon.muestraFichaTecnica();
         System.out.println(casaDragon.getDuracionMinutos());
 
-        Pelicula otraPelicula = new Pelicula("Matrix");
-        otraPelicula.setFechaLanzamiento(1998);
+        Pelicula otraPelicula = new Pelicula("Matrix", 1998);
         otraPelicula.setDuracionMinutos(180);
 
         System.out.println("*******************************************************");
@@ -61,9 +57,8 @@ public class Principal {
         filtro.filtra(episodio);
 
         // ****************************************************************
-        var peliculaBruno = new Pelicula("El Señor de los Anillos");
+        var peliculaBruno = new Pelicula("El Señor de los Anillos", 2001);
         peliculaBruno.setDuracionMinutos(180);
-        peliculaBruno.setFechaLanzamiento(2001);
 
         // Todos los objetos que coloquemos dentro del ArrayList serán de tipo Pelicula
         ArrayList<Pelicula> listaPeliculas = new ArrayList<>();
