@@ -5,9 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Titulo implements Comparable<Titulo>{
 
-    @SerializedName("Title")
     private String nombre;
-    @SerializedName("Year")
     private int fechaLanzamiento;
     private int duracionMinutos;
     private boolean incluidoPlan;
@@ -86,10 +84,8 @@ public class Titulo implements Comparable<Titulo>{
 
     @Override
     public String toString() {
-        return "Titulo{" +
-                "nombre='" + nombre + '\'' +
-                ", fechaLanzamiento=" + fechaLanzamiento +
-                ", duración=" + duracionMinutos +
-                '}';
+        return "(Nombre=" + nombre +
+                ", Fecha de Lanzamiento=" + fechaLanzamiento +
+                ", Duración=" + duracionMinutos + ")";
     }
 }
