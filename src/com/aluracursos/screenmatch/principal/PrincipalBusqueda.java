@@ -1,7 +1,10 @@
 package com.aluracursos.screenmatch.principal;
 
 import com.aluracursos.screenmatch.modelos.Titulo;
+import com.aluracursos.screenmatch.modelos.TitutloOmdb;
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.net.URI;
@@ -31,8 +34,14 @@ public class PrincipalBusqueda {
         String json = response.body();
         System.out.println(json);
 
-        Gson gson = new Gson();
-        Titulo miTitulo = gson.fromJson(json, Titulo.class);
+        Gson gson = new GsonBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .create();
+
+        // Titulo miTitulo = gson.fromJson(json, Titulo.class);
+        TitutloOmdb miTituloOmdb = gson.fromJson(json, TitutloOmdb.class);
+        System.out.println(miTituloOmdb);
+        Titulo miTitulo = new Titulo(miTituloOmdb);
         System.out.println(miTitulo);
     }
 }
