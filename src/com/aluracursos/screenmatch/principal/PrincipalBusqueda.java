@@ -1,5 +1,6 @@
 package com.aluracursos.screenmatch.principal;
 
+import com.aluracursos.screenmatch.exception.ErrorConversionDuracionException;
 import com.aluracursos.screenmatch.modelos.Titulo;
 import com.aluracursos.screenmatch.modelos.TitutloOmdb;
 import com.google.gson.FieldNamingPolicy;
@@ -21,7 +22,9 @@ public class PrincipalBusqueda {
         System.out.println("Escriba el nombre de la película: ");
         var busqueda = lectura.nextLine();
 
-        String direccion = "https://www.omdbapi.com/?t=" + busqueda + "&apikey=5137789a";
+        String direccion = "https://www.omdbapi.com/?t=" +
+                busqueda.replace(" ", "+") +
+                "&apikey=5137789a";
 
         try {
             HttpClient client = HttpClient.newHttpClient();
@@ -50,8 +53,8 @@ public class PrincipalBusqueda {
             System.out.println(e.getMessage());
         } catch (IllegalArgumentException e) {
             System.out.println("Error en la URI, verifique la dirección.");
-        } catch (Exception e) {
-            System.out.println("Ocurrió un error inesperado");
+        } catch (ErrorConversionDuracionException e) {
+            System.out.println(e.getMessage());
         }
 
         System.out.println("Finalizó la ejecución del programa!");
